@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dnsmasq:
+    image: ghcr.io/ksurl/dnsmasq
+    container_name: dnsmasq
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
+    ports:
+      - 53:53/udp
+    cap_add:
+      - NET_ADMIN
+    restart: always
